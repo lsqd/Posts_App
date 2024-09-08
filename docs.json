@@ -1,0 +1,99 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Posts API",
+      "description": "API для поиска и удаления постов",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "https://127.0.0.1",
+        "description": "Production server"
+      }
+    ],
+    "paths": {
+      "/posts/{text}": {
+        "get": {
+          "summary": "Поиск постов по тексту",
+          "parameters": [
+            {
+              "name": "text",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "description": "Текст для поиска постов"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Успешный запрос",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            },
+            "503": {
+              "description": "Сервис временно недоступен",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "error": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/posts/{uuid}": {
+        "delete": {
+          "summary": "Удаление поста по UUID",
+          "parameters": [
+            {
+              "name": "uuid",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              },
+              "description": "UUID поста для удаления"
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Пост успешно удален"
+            },
+            "503": {
+              "description": "Сервис временно недоступен",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "error": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

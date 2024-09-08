@@ -1,0 +1,9 @@
+{
+    "version": 1.1,
+    "ELASTIC_URL": "http://elasticsearch:9200",
+    "INDEX_NAME": "posts",
+    "MONGODB_HOST": "mongodb",
+    "MONGODB_PORT": 27017,
+    "DB_NAME": "POSTS",
+    "COLLECTION_NAME": "posts"
+}
