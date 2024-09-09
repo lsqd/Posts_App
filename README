@@ -1,1 +1,2 @@
-Запустить docker-compose up --build
+git clone
+docker-compose up --build
