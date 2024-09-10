@@ -66,7 +66,3 @@ async def remove_post_by_id(uuid):
 
 if __name__ == '__main__':
     app.run(debug=False, host='localhost', port=8080)
-
-# 1 - Добавить удаление после себя JSON файлов и Posts.csv
-# 2 - Проверить как оно работает через git
-# 3 - Проверить как работает, если в докер файле указывать python3 setup.py с паузой в 10 секунд.
